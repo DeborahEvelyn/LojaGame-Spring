@@ -2,4 +2,4 @@
 
 :computer: CRUD criado para uma loja de games.
 
-:zap: Exercício proposto no Bootcamp Generation Brasil.
+:zap: Exercício de Spring Boot, proposto no Bootcamp Generation Brasil.
