@@ -2,11 +2,12 @@ package com.loja.games.model;
 
 
 	import javax.persistence.Entity;
-	import javax.persistence.GeneratedValue;
-	import javax.persistence.GenerationType;
-	import javax.persistence.Id;
-	import javax.persistence.Table;
-	import javax.validation.constraints.NotNull;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 	 
 	@Entity
 	@Table(name = "tb_usuario")
@@ -19,8 +20,10 @@ package com.loja.games.model;
 		@NotNull
 		private String nome;
 		
+		
 		@NotNull
 		private String cpf;
+		
 		
 		@NotNull
 		private String endereco;

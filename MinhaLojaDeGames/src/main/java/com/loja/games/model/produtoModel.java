@@ -29,7 +29,7 @@ public class produtoModel {
 	private String descricao;
 	
 	@ManyToOne
-	@JsonIgnoreProperties("produto")
+	@JsonIgnoreProperties("produtos")
 	private categoriaModel categoria;
 
 	public Long getId() {
@@ -71,6 +71,5 @@ public class produtoModel {
 	public void setCategoria(categoriaModel categoria) {
 		this.categoria = categoria;
 	}
-	
-	
+
 }

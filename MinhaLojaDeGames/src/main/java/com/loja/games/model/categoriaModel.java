@@ -1,26 +1,33 @@
 package com.loja.games.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
-@Table 
+@Table (name = "tb_categoria")
 public class categoriaModel {
 	
 	@Id
 	@Column
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private Long id;
+		
+	@Column
+	private String nome;
 	
-	@Column 
-	private String categoriaJogos;
-	
-	@Column 
-	private String categoriaColecionaveis;
+	@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("categoria")
+	private List<produtoModel> produtos;
 
 	public Long getId() {
 		return id;
@@ -30,20 +37,20 @@ public class categoriaModel {
 		this.id = id;
 	}
 
-	public String getCategoriaJogos() {
-		return categoriaJogos;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setCategoriaJogos(String categoriaJogos) {
-		this.categoriaJogos = categoriaJogos;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
-	public String getCategoriaColecionaveis() {
-		return categoriaColecionaveis;
+	public List<produtoModel> getProdutos() {
+		return produtos;
 	}
 
-	public void setCategoriaColecionaveis(String categoriaColecionaveis) {
-		this.categoriaColecionaveis = categoriaColecionaveis;
+	public void setProdutos(List<produtoModel> produtos) {
+		this.produtos = produtos;
 	}
 
 }

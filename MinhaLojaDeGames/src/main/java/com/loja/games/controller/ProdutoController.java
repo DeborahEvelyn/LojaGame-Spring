@@ -44,8 +44,8 @@ public class ProdutoController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<produtoModel> post(@RequestBody produtoModel descricao){
-		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(descricao));
+	public ResponseEntity<produtoModel> post(@RequestBody produtoModel produto){
+		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(produto));
 	}
 	
 	
